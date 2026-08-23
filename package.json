@@ -4,12 +4,11 @@
   "main": "src-electron/main.js",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
-    "dev-win": "npx vite wait-on http://localhost:5173 && npx electron .",
-    "build": "vite build && electron-builder",
-    "start": "electron .",
-    "dev:vite": "vite",
-    "dev:electron": "wait-on http://localhost:5173 && npx electron ."
+  "dev:vite": "vite --config vite.config.js",
+  "dev:electron": "cross-env NODE_ENV=development wait-on http://localhost:5173 && npx electron .",
+  "dev": "concurrently -k \"npm:dev:vite\" \"npm:dev:electron\"",
+  "build:renderer": "vite build --config vite.config.js",
+  "build": "npm run build:renderer && electron-builder"
   },
   "dependencies": {
     "jsmidgen": "^0.1.8 ",

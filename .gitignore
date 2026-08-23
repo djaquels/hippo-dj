@@ -1,2 +1,3 @@
 compositions/**
 /node_modules
+/dist
