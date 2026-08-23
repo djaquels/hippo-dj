@@ -5,8 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "dev-win": "npx vite wait-on http://localhost:5173 && npx electron .",
     "build": "vite build && electron-builder",
-    "start": "electron ."
+    "start": "electron .",
+    "dev:vite": "vite",
+    "dev:electron": "wait-on http://localhost:5173 && npx electron ."
   },
   "dependencies": {
     "jsmidgen": "^0.1.8 ",
