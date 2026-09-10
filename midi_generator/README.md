@@ -139,3 +139,8 @@ tempo=96
 time_signature=4/4
 key=A#
 ```
+
+# Ollama Model 
+```bash
+ollama create tommy-midi:1.0 -f Modelfile
+```
